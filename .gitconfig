@@ -1,0 +1,9 @@
+[core]
+  excludesfile = /Users/c/.gitignore
+[remote "origin"]
+  proxy = 
+[user]
+  name = chris
+  email = not@my.email
+[init]
+  defaultBranch = main
