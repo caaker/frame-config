@@ -15,7 +15,7 @@ test() {
 #
 #
 
-source "$HOME/top/_p/_p.sh"
+source "$HOME/top/_private/_p.sh"
 # printenv
 
 #
