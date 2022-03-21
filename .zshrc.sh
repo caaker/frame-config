@@ -1,96 +1,54 @@
-
 # test syntax here
+# arguments are built in as $0, $1, ...
 test() {
-  # echo "argument0: $0";
-  # echo "argument1: $1";
+  echo "argument0: $0";
+  echo "argument1: $1";
 }
 
 #
 #
 #
 #
-# process.env variables
+# this file is public, remove private api keys, and source
 #
 #
 #
 #
 
 source "$HOME/top/_private/_p.sh"
-# printenv
+# printenv # to see environment variables
 
 #
 #
 #
 #
-# Configure
-#
-#
-#
-#
-
-my_path="/top"
-
-#
-#
-#
-#
-# Run commands
+# run commands
 #
 #
 #
 #
 
 echo "Hello, $USER.  You are using $0.  The time is $(date +"%T"). Your favorite color is blue." 
-my_root="$HOME$my_path"
-cd "$my_root"
+cd "$HOME/top"
 
 #
 #
 #
 #
-# Functions
+# PS1 is used to configure the cursor
 #
 #
 #
 #
 
-top() {
-  cd /Users/c/top/
-}
+# set up cursor to display path
+PS1="< %d > "
 
 #
 #
 #
 #
-# runApp
-# - depends upon 'npm run server' and 'npm run client' two scripts in package.json
-#
-#
-#
-#
-
-run() {
-osascript <<EOF
-tell application "System Events"
-  tell process "Terminal" to keystroke "t" using command down
-end tell
-tell application "Terminal" to do script "cd frame-server" in front window
-tell application "Terminal" to do script "npm run server" in front window
-EOF
-osascript <<EOF
-tell application "System Events"
-  tell process "Terminal" to keystroke "t" using command down
-end tell
-tell application "Terminal" to do script "cd frame" in front window
-tell application "Terminal" to do script "npm run client" in front window
-EOF
-}
-
-#
-#
-#
-#
-# Aliases - move to functions
+# Aliases - consider making functions for malleability
 #
 #
 #
@@ -99,19 +57,6 @@ EOF
 alias h='history'
 alias g='git'
 alias p='ps aux | grep node'
-
-#
-#
-#
-#
-# PS1
-#
-#
-#
-#
-
-# set up cursor to display path
-PS1="< %d > "
 
 #
 #
@@ -134,7 +79,7 @@ li() {
   ls -al
 }
 
-# list global pakcages
+# list global packages
 lg() {
   npm ls -g --depth 0
 }
@@ -142,6 +87,10 @@ lg() {
 # heroku log
 hl() {
   heroku logs --tail
+}
+
+top() {
+  cd /Users/c/top/
 }
 
 #
@@ -187,10 +136,10 @@ macCreate(){
 #
 #
 
-# automate git push to heroku with optional comment
+# automate git push to heroku
 gph() {
   git add .
-  git commit -m $1
+  git commit -m "auto-push"
   git push heroku main
 }
 
@@ -201,7 +150,7 @@ ga() {
 
 # git commit
 gc() {
-  git commit -m $1
+  git commit -m "$1"
 }
 
 # git log
@@ -222,10 +171,6 @@ gr() {
 # git status
 gs() {
   git status
-}
-
-gsi() {
-  git status --ignored
 }
 
 # git test
@@ -249,14 +194,14 @@ setupOS() {
 }
 
 
-# global like your mom
+# install global
 installGlobal() {
   npm install -g npm
   npm install -g nodemon
   npm install -g eslint
 }
 
-#install client repo
+#install client side
 installClient() {
   npm install react react-dom react-redux
   npm install --save-dev webpack webpack-cli 
@@ -264,10 +209,10 @@ installClient() {
   npm install --save-dev style-loader css-loader
 
   # optional
-  # npm npm install @mui/icons-material @emotion/react @emotion/styled
+  # npm install @mui/icons-material @emotion/react @emotion/styled
 }
 
-# install server repo
+# install server side
 installServer() {
   npm install express express-session 
   npm install redis connect-redis
@@ -289,6 +234,33 @@ installConfig() {
   ln -f mongod.conf  /usr/local/etc/mongod.conf
   ln -f redis.conf   /usr/local/etc/redis.conf
 
-  # oddly specefic
+  # oddly specific
   ln -f Preferences.sublime-settings "/Users/c/Library/Application Support/Sublime Text 3/Packages/User/Preferences.sublime-settings"
+}
+
+#
+#
+#
+#
+# runApp locally
+#
+#
+#
+#
+
+run() {
+osascript <<EOF
+tell application "System Events"
+  tell process "Terminal" to keystroke "t" using command down
+end tell
+tell application "Terminal" to do script "cd frame-server" in front window
+tell application "Terminal" to do script "npm run server" in front window
+EOF
+osascript <<EOF
+tell application "System Events"
+  tell process "Terminal" to keystroke "t" using command down
+end tell
+tell application "Terminal" to do script "cd frame" in front window
+tell application "Terminal" to do script "npm run client" in front window
+EOF
 }

@@ -1,9 +1,9 @@
-# user
+# created by user
 private
 
-# org - npm
+# created by npm
 node_modules
 
-# org - apple
+# created by MacOS
 *.DS_Store
 

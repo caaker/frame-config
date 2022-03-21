@@ -7,3 +7,5 @@
   email = not@my.email
 [init]
   defaultBranch = main
+[pull]
+  rebase = false

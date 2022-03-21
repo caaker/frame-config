@@ -1,20 +1,17 @@
 {
-
 	// file_exclude_patterns and folder_exclude_patterns control which files/folders are displayed on the sidebar
-	// "package-lock.json"
-	// "bundle.*",
+	// 		bundle.*
+	// 		package-lock.json,
 
-
-	"file_exclude_patterns":
-	[
-		"package-lock.json",
-		"*.DS_Store",
-		"*.sublime-workspace"
-	],
 	"folder_exclude_patterns":
 	[
 		"node_modules",
 		".git"
+	],
+
+	"file_exclude_patterns":
+	[
+		"*.DS_Store"
 	],
 
 	// these files will still show up in the side bar, but won't be searchable
@@ -25,7 +22,8 @@
 		"*.sql"
 	],
 
-  // gui
+  // rest
+  "spell_check": true,
 	"word_wrap": false,
 	"font_size": 10,
 	"ignored_packages":
@@ -33,11 +31,13 @@
 		"Vintage"
 	],
 	"line_numbers": true,
-
-	// functionality
 	"save_on_focus_lost": true,
 	"tab_size": 2,
 	"translate_tabs_to_spaces": true,
 	"margin": 0,
 	"trim_trailing_white_space_on_save": true,
+	"added_words":
+	[
+		"heroku"
+	],
 }
