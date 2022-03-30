@@ -196,28 +196,28 @@ setupOS() {
 
 # install global
 installGlobal() {
-  npm install -g npm
-  npm install -g nodemon
-  npm install -g eslint
+  npm i -g npm
+  npm i -g nodemon
+  npm i -g eslint
 }
 
 #install client side
 installClient() {
-  npm install react react-dom react-redux
-  npm install --save-dev webpack webpack-cli 
-  npm install --save-dev babel-loader @babel/preset-env @babel/preset-react
-  npm install --save-dev style-loader css-loader
+  npm i -D webpack webpack-cli
+  npm i -D babel-loader @babel/preset-env @babel/preset-react
+  npm i -D style-loader css-loader
 
+  npm install react react-dom react-redux
   # optional
   # npm install @mui/icons-material @emotion/react @emotion/styled
 }
 
 # install server side
 installServer() {
-  npm install express express-session 
-  npm install redis connect-redis
-  npm install mongoose
-  npm install passport passport-google-oauth
+  npm i express express-session
+  npm i redis connect-redis
+  npm i mongoose
+  npm i passport passport-google-oauth
 }
 
 # install config files

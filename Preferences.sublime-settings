@@ -2,10 +2,10 @@
 	// file_exclude_patterns and folder_exclude_patterns control which files/folders are displayed on the sidebar
 	// 		bundle.*
 	// 		package-lock.json,
+  //		"node_modules",
 
 	"folder_exclude_patterns":
 	[
-		"node_modules",
 		".git"
 	],
 
@@ -38,6 +38,13 @@
 	"trim_trailing_white_space_on_save": true,
 	"added_words":
 	[
-		"heroku"
+		"heroku",
+		"websocket",
+		"webpack",
+		"repo",
+		"jsx",
+		"js",
+		"css",
+		"obo",
 	],
 }
