@@ -3,7 +3,7 @@
 	// 		bundle.*
 	// 		package-lock.json,
   //		"node_modules",
-
+  // 		test 3
 	"folder_exclude_patterns":
 	[
 		".git"
@@ -46,5 +46,52 @@
 		"js",
 		"css",
 		"obo",
+		"npm",
+		"mui",
+		"usr",
+		"mongodb",
+		"json",
+		"nodemon",
+		"zshrc",
+		"eslintrc",
+		"gitignore",
+		"gitconfig",
+		"redis",
+		"conf",
+		"mongod",
+		"svg",
+		"eslint",
+		"sql",
+		"github",
+		"styleguide",
+		"io",
+		"html",
+		"init",
+		"diablo",
+		"el",
+		"redux",
+		"stackoverflow",
+		"wikipedia",
+		"javascript",
+		"faslsy",
+		"truthy",
+		"mozilla",
+		"Nueces",
+		"alphavantage",
+		"www",
+		"rapidapi",
+		"outputsize",
+		"unirest",
+		"fs",
+		"typeof",
+		"Falsy",
+		"Torchy's",
+		"pre",
+		"austin",
+		"rosslawgroup",
+	],
+	"ignored_words":
+	[
+		"https"
 	],
 }

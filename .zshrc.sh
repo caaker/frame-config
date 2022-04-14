@@ -1,15 +1,30 @@
-# test syntax here
+
+#
+#
+#
+#
+# Test Area
+#
+#
+#
+#
+
+inner() {
+  echo "inner"
+}
+
 # arguments are built in as $0, $1, ...
 test() {
-  echo "argument0: $0";
-  echo "argument1: $1";
+  echo "argument 0: $0"
+  echo "argument 1: $1"
+  inner
 }
 
 #
 #
 #
 #
-# this file is public, remove private api keys, and source
+# Private
 #
 #
 #
@@ -22,13 +37,58 @@ source "$HOME/top/_private/_p.sh"
 #
 #
 #
-# run commands
+# Network Functions
 #
 #
 #
 #
 
-echo "Hello, $USER.  You are using $0.  The time is $(date +"%T"). Your favorite color is blue." 
+# shows the ip address
+ip() {
+  ifconfig en0 | grep inet | grep -v inet6 | awk '{print $2}'
+}
+
+# https://superuser.com/questions/86956/release-renew-ip-address-via-terminal-in-os-x
+rip() {
+  sudo ipconfig set en0 BOOTP
+  sudo ipconfig set en0 DHCP
+}
+
+# shows the mac address
+mac() {
+  ifconfig en0 | grep -o -E '([[:xdigit:]]{1,2}:){5}[[:xdigit:]]{1,2}'
+}
+
+macCreate(){
+  printf '00:60:2f:%02x:%02x:%02x\n' $[RANDOM%256] $[RANDOM%256] $[RANDOM%256]
+}
+
+# randomize the mac address
+randomizeMac() {
+  local mac=$(macCreate)
+  sudo ifconfig en0 ether $mac
+  sudo ifconfig en0 down
+  sudo ifconfig en0 up
+  echo "randomizeMac complete with new mac address: $mac"
+}
+
+#
+#
+#
+#
+# Run
+#
+#
+#
+#
+
+#echo "User:  $USER"
+#echo "Shell: $0"
+echo ""
+#echo "Time:  $(date +"%T")"
+echo "MAC:   $(mac)"
+echo "IP:    $(ip)"
+echo ""
 cd "$HOME/top"
 
 #
@@ -91,39 +151,6 @@ hl() {
 
 top() {
   cd /Users/c/top/
-}
-
-#
-#
-#
-#
-# Network Functions
-#
-#
-#
-#
-
-# shows the mac address
-mac() {
-  ifconfig en0 | grep -o -E '([[:xdigit:]]{1,2}:){5}[[:xdigit:]]{1,2}'
-}
-
-# shows the ip address
-ip() {
-  ifconfig en0 | grep inet | grep -v inet6 | awk '{print $2}'
-}
-
-# randomize the mac address
-randomizeMac() {
-  local mac=$(macCreate)
-  sudo ifconfig en0 ether $mac
-  sudo ifconfig en0 down
-  sudo ifconfig en0 up
-  echo "randomizeMac complete with new mac address: $mac"
-}
-
-macCreate(){
-  printf '00:60:2f:%02x:%02x:%02x\n' $[RANDOM%256] $[RANDOM%256] $[RANDOM%256]
 }
 
 #
