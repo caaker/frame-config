@@ -1,7 +1,7 @@
 {
 	// file_exclude_patterns and folder_exclude_patterns control which files/folders are displayed on the sidebar
 	// 		bundle.*
-	// 		package-lock.json,
+	//
   //		"node_modules",
   // 		test 3
 	"folder_exclude_patterns":
@@ -11,6 +11,7 @@
 
 	"file_exclude_patterns":
 	[
+		"package-lock.json",
 		"*.DS_Store"
 	],
 
@@ -101,6 +102,39 @@
 		"favicon",
 		"opa",
 		"facebook",
+		"const",
+		"crockford's",
+		"api",
+		"ngix",
+		"http",
+		"proto",
+		"req",
+		"ws",
+		"auth",
+		"applogise",
+		"moneypot",
+		"trie",
+		"F1",
+		"L1",
+		"M1",
+		"digg",
+		"env",
+		"deserialize",
+		"hash1",
+		"ascii",
+		"mousepad",
+		"linkedin",
+		"devops",
+		"Pinterest",
+		"Checkr",
+		"texas",
+		"dps",
+		"realid",
+		"30m",
+		"russia",
+		"Huberman",
+		"hackerank",
+		"Reibus",
 	],
 	"ignored_words":
 	[

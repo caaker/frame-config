@@ -48,28 +48,29 @@ ip() {
   ifconfig en0 | grep inet | grep -v inet6 | awk '{print $2}'
 }
 
+# shows the mac address
+mac() {
+  ifconfig en0 | grep -o -E '([[:xdigit:]]{1,2}:){5}[[:xdigit:]]{1,2}'
+}
+
 # https://superuser.com/questions/86956/release-renew-ip-address-via-terminal-in-os-x
 rip() {
   sudo ipconfig set en0 BOOTP
   sudo ipconfig set en0 DHCP
 }
 
-# shows the mac address
-mac() {
-  ifconfig en0 | grep -o -E '([[:xdigit:]]{1,2}:){5}[[:xdigit:]]{1,2}'
-}
-
 macCreate(){
-  printf '00:60:2f:%02x:%02x:%02x\n' $[RANDOM%256] $[RANDOM%256] $[RANDOM%256]
+  # printf '3c:22:fb:3a:%02x:%02x\n' $[RANDOM%256] $[RANDOM%256]
+  printf '3c:22:fb:3a:dc:%02x\n' $[RANDOM%256]
 }
 
 # randomize the mac address
 randomizeMac() {
   local mac=$(macCreate)
+  # sudo ifconfig en0 down
   sudo ifconfig en0 ether $mac
-  sudo ifconfig en0 down
-  sudo ifconfig en0 up
-  echo "randomizeMac complete with new mac address: $mac"
+  sudo ifconfig en0 ether $mac
+  # sudo ifconfig en0 up
 }
 
 #
@@ -82,14 +83,25 @@ randomizeMac() {
 #
 #
 
-#echo "User:  $USER"
-#echo "Shell: $0"
-echo ""
-#echo "Time:  $(date +"%T")"
-echo "MAC:   $(mac)"
-echo "IP:    $(ip)"
-echo ""
-cd "$HOME/top"
+# real clear
+rc() {
+  printf '\33c\e[3J'
+}
+
+start() {
+  rc
+  #echo "User:  $USER"
+  #echo "Shell: $0"
+  echo ""
+  #echo "Time:  $(date +"%T")"
+  echo "MAC:   $(mac)"
+  echo "IP:    $(ip)"
+  echo ""
+  cd "$HOME/top"
+}
+start
+
+
 
 #
 #
