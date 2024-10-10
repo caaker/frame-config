@@ -1,0 +1,21 @@
+{
+  "shell_cmd": "javac \"${file}\" -d \"${file_path}/classes\" && java -cp classes \"${file_base_name}\"",
+  "working_dir": "${file_path}",
+  "file_regex": "^(...*?):([0-9]*):?([0-9]*)",
+  "selector": "source.java",
+}
+
+{
+  "shell_cmd": "g++ \"${file}\" -o \"${file_path}/out/${file_base_name}\" && \"${file_path}/out/${file_base_name}\"",
+  "file_regex": "^(..[^:]*):([0-9]+):?([0-9]+)?:? (.*)$",
+  "working_dir": "${file_path}",
+  "selector": "source.c++"
+}
+
+{
+  "shell_cmd": "gcc \"${file}\" -o \"${file_path}/out/${file_base_name}\" && \"${file_path}/out/${file_base_name}\"",
+  "file_regex": "^(..[^:]*):([0-9]+):?([0-9]+)?:? (.*)$",
+  "working_dir": "${file_path}",
+  "selector": "source.c",
+  "quiet": "true"
+}
