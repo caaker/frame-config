@@ -16,9 +16,20 @@ gc() {
   git commit -m "$msg"
 }
 
-# git log
-gl() {
+# git short log
+# -s shows commits for each author
+gshort() {
   git shortlog -s
+}
+
+# show the last commit or a specific commit
+# https://www.warp.dev/terminus/git-commit-history
+gshow() {
+  git show "${1:-HEAD}"
+}
+
+gcl() {
+  git config --list --show-origin
 }
 
 # git remote verbose
