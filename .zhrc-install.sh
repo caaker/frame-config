@@ -20,7 +20,6 @@ lConfig() {
   # usr/local/etc/
   # requires sudo unlike home directory access
   sudo ln -f ./install/mongod.conf  /usr/local/etc/mongod.conf
-  sudo ln -f ./install/redis.conf   /usr/local/etc/redis.conf
 
   # etc configuration files
   echo "< message > mongod.conf, redis.conf linked into usr/local/etc"
