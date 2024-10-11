@@ -7,21 +7,16 @@
 # links config files with force
 lConfig() {
 
-  # home directory
+  # home directory configuration files
   ln -f .zshrc.sh              ~/.zshrc
   ln -f ./install/.eslintrc    ~/.eslintrc
   ln -f ./install/.gitconfig   ~/.gitconfig
   ln -f ./install/.gitignore   ~/.gitignore
   ln -f ./install/nodemon.json ~/nodemon.json
-
-  # home directory configuration files
   echo "< message > .zshrs.sh, .eslintrc, .gitconfig, .gitignore, nodemon.json linked into home directory ~"
 
-  # usr/local/etc/
-  # requires sudo unlike home directory access
-  sudo ln -f ./install/mongod.conf  /usr/local/etc/mongod.conf
-
   # etc configuration files
+  sudo ln -f ./install/mongod.conf  /usr/local/etc/mongod.conf
   echo "< message > mongod.conf linked into usr/local/etc"
 }
 
