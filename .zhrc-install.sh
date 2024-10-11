@@ -22,10 +22,7 @@ lConfig() {
   sudo ln -f ./install/mongod.conf  /usr/local/etc/mongod.conf
 
   # etc configuration files
-  echo "< message > mongod.conf, redis.conf linked into usr/local/etc"
-
-  # oddly specific
-  # ln -f ./install/Preferences.sublime-settings "/Users/c/Library/Application Support/Sublime Text 3/Packages/User/Preferences.sublime-settings"
+  echo "< message > mongod.conf linked into usr/local/etc"
 }
 
 
