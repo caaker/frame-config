@@ -74,7 +74,6 @@ iClient() {
 # install server side npm packages
 iServer() {
   sudo npm i -g express express-session
-  sudo npm i -g redis connect-redis
   sudo npm i -g mongoose
   sudo npm i -g passport passport-google-oauth
 
