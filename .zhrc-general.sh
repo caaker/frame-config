@@ -4,6 +4,7 @@
 
 PS1="< %d > "
 
+#
 # General Functions
 #
 
@@ -49,3 +50,24 @@ t() {
   li
 }
 
+
+#
+# Convenience functions for moving between repos
+#
+
+
+f-c() {
+  cd "$HOME/top/frame-config"
+}
+
+f-a() {
+  cd "$HOME/top/frame-arc"
+}
+
+f-cl() {
+  cd "$HOME/top/frame-client"
+}
+
+f-s() {
+  cd "$HOME/top/frame-server"
+}
