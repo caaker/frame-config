@@ -51,5 +51,6 @@ iServer() {
   npm i express express-session
   npm i mongoose
   npm i passport passport-google-oauth
+  npm i ws
   echo "< message > Server-side production packages installed < message >"
 }
