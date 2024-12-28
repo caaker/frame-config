@@ -1,6 +1,6 @@
 #
 #
-# Git Quick Functions - Short
+# Git Functions
 #
 #
 
@@ -35,23 +35,17 @@ gt() {
   ssh -T git@github.com
 }
 
-#
-#
-# Git Quick Functions
-#
-#
+gpush() {
+  git push origin main
+}
 
 gpull() {
   git pull origin main
 }
 
-gpush() {
-  git push origin main
-}
-
 #
 #
-# Git Quick Functions - Reserved
+# Git Functions - Refactor or Remove
 #
 #
 
