@@ -1,0 +1,22 @@
+{
+  "parserOptions": {
+    "parser": "babel-eslint",
+    "ecmaVersion": 12,
+    "sourceType": "module",
+    "ecmaFeatures": {
+      "jsx": true
+    }
+  },
+  "rules": {
+    "indent": ["error", 2, { "SwitchCase": 1 }],
+    "eqeqeq": ["error", "always"],
+    "max-depth": ["error", 5],
+    "space-before-function-paren": ["error", "never"],
+    "template-curly-spacing": ["error", "always"],
+    "quotes": ["error", "single", { "allowTemplateLiterals": true }],
+    "curly": "error",
+    "brace-style": ["error", "1tbs"],
+    "space-before-blocks": "error",
+    "no-trailing-spaces": "error"
+  }
+}
