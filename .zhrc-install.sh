@@ -1,64 +1,48 @@
 #
-#
-# Install Configuration Files
-#
+# Link Configuration Files
 #
 
-# links config files with force
+# links config files with force -f to the home directory ~
 lConfig() {
-
-  # home directory configuration files
   ln -f .zshrc.sh              ~/.zshrc
   ln -f ./install/.eslintrc    ~/.eslintrc
   ln -f ./install/.gitconfig   ~/.gitconfig
   ln -f ./install/.gitignore   ~/.gitignore
   ln -f ./install/nodemon.json ~/nodemon.json
   echo "< message > .zshrs.sh, .eslintrc, .gitconfig, .gitignore, nodemon.json linked into home directory < message > "
+}
 
-  # etc configuration files
-  # sudo ln -f ./install/mongod.conf  /usr/local/etc/mongod.conf
+# link Mongo later
+lMongo() {
+  # sudo ln -f ./install/mongod.conf  /usr/local/etc/mongod.conf  
   # echo "< message > mongod.conf linked into usr/local/etc < message > "
 }
 
-
 #
-#
-# Install node, npm, and npm packages
-#
+# NPM Install Commands
 #
 
-
-# install global npm packages - perhaps move these to below
+# install global npm packages
 iGlobal() {
   # sudo npm i -g npm
   sudo npm i -g nodemon
   sudo npm i -g eslint
-
-  # done
   echo "< message > nodemon, eslint installed globally < message > "
 }
 
+# install client side npm packages used for development -D
 iClient() {
-
-  # install client side npm packages used for development -D
-  # using -g global option will no create a package.json file
   sudo npm i -D webpack webpack-cli
   sudo npm i -D babel-loader @babel/preset-env @babel/preset-react
   sudo npm i -D style-loader css-loader
-
-  #install client side npm packages used for production
   sudo npm i react react-dom redux react-redux frame-arc
-
-  # done
-  echo "< message > Client-side production and development packages installed globally" 
+  echo "< message > Client-side production and development packages installed < message >" 
 }
 
 # install server side npm packages
 iServer() {
-  sudo npm i -g express express-session
-  sudo npm i -g mongoose
-  sudo npm i -g passport passport-google-oauth
-
-  # done
-  echo "< message > Server-side production packages installed globally"
+  sudo npm i express express-session
+  sudo npm i mongoose
+  sudo npm i passport passport-google-oauth
+  echo "< message > Server-side production packages installed < message >"
 }

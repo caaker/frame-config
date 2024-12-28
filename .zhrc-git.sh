@@ -1,35 +1,23 @@
 #
 #
-# Git Quick Functions
+# Git Quick Functions - Short
 #
 #
+
+# git status
+gs() {
+  git status
+}
 
 # git add all
 ga() {
   git add .
 }
 
-# git commit 
-# :- is a parameter expansion that specifies a default value
+# git commit :- is a parameter expansion that specifies a default value
 gc() {
   local msg="${1:-auto-commit}"
   git commit -m "$msg"
-}
-
-# git short log
-# -s shows commits for each author
-gshort() {
-  git shortlog -s
-}
-
-# show the last commit or a specific commit
-# https://www.warp.dev/terminus/git-commit-history
-gshow() {
-  git show "${1:-HEAD}"
-}
-
-gcl() {
-  git config --list --show-origin
 }
 
 # git remote verbose
@@ -37,27 +25,28 @@ gr() {
   git remote -v
 }
 
-# git status
-gs() {
-  git status
-}
-
 # git test
 gt() {
   ssh -T git@github.com
 }
 
-gpullom() {
+#
+#
+# Git Quick Functions
+#
+#
+
+gpull() {
   git pull origin main
 }
 
-gpushom() {
+gpush() {
   git push origin main
 }
 
 #
 #
-# Git Functions
+# Git Quick Functions - Reserved
 #
 #
 
@@ -71,3 +60,15 @@ setupgeditor() {
   # set sublime as the default text editor for git; make sure subl is in the PATH
   git config --global core.editor "subl -n -w"
 }
+
+# git short log
+# -s shows commits for each author
+gshort() {
+  git shortlog -s
+}
+
+# show the last commit or a specific commit: https://www.warp.dev/terminus/git-commit-history
+gshow() {
+  git show "${1:-HEAD}"
+}
+
