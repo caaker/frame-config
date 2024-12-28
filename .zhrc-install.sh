@@ -34,22 +34,22 @@ iGlobal() {
 iClient() {
 
   # test library
-  sudo npm i -D jest
+  npm i -D jest
 
   # bundler and its dependencies
-  sudo npm i -D webpack webpack-cli
-  sudo npm i -D babel-loader @babel/preset-env @babel/preset-react
-  sudo npm i -D style-loader css-loader
+  npm i -D webpack webpack-cli
+  npm i -D babel-loader @babel/preset-env @babel/preset-react
+  npm i -D style-loader css-loader
 
   # production libraries
-  sudo npm i react react-dom redux react-redux frame-arc
+  npm i react react-dom redux react-redux frame-arc
   echo "< message > Client-side production and development packages installed < message >" 
 }
 
 # install server side npm packages
 iServer() {
-  sudo npm i express express-session
-  sudo npm i mongoose
-  sudo npm i passport passport-google-oauth
+  npm i express express-session
+  npm i mongoose
+  npm i passport passport-google-oauth
   echo "< message > Server-side production packages installed < message >"
 }
