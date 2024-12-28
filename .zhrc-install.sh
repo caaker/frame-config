@@ -32,9 +32,16 @@ iGlobal() {
 
 # install client side npm packages used for development -D
 iClient() {
+
+  # test library
+  sudo npm i -D jest
+
+  # bundler and its dependencies
   sudo npm i -D webpack webpack-cli
   sudo npm i -D babel-loader @babel/preset-env @babel/preset-react
   sudo npm i -D style-loader css-loader
+
+  # production libraries
   sudo npm i react react-dom redux react-redux frame-arc
   echo "< message > Client-side production and development packages installed < message >" 
 }

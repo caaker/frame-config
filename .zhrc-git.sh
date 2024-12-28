@@ -9,6 +9,11 @@ gs() {
   git status
 }
 
+# git diff
+gd() {
+  git diff
+}
+
 # git add all
 ga() {
   git add .
