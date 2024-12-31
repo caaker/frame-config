@@ -58,16 +58,30 @@ t() {
 
 f-c() {
   cd "$HOME/top/frame-config"
+  reload
 }
 
 f-a() {
   cd "$HOME/top/frame-arc"
+  reload
 }
 
 f-cl() {
   cd "$HOME/top/frame-client"
+  reload
 }
 
 f-s() {
   cd "$HOME/top/frame-server"
+  reload
+}
+
+f-p() {
+  cd "$HOME/top/private"
+  reload
+}
+
+f-l() {
+  cd "$HOME/top/learn"
+  reload
 }
