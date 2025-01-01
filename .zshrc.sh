@@ -64,9 +64,17 @@ start() {
   # make common git commands accessible
   source "$HOME/top/frame-config/.zhrc-git.sh"
 
-  # make common git commands accessible
+  #
   source "$HOME/top/frame-config/.zhrc-learn.sh"
 
+  #
+  source "$HOME/top/frame-config/.zhrc-macos.sh"
+
+  #
+  source "$HOME/top/frame-config/.zhrc-network.sh"
+
+  #
+  source "$HOME/top/frame-config/.zhrc-private.sh"
 
   #
   # Output to the current shell

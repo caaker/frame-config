@@ -18,9 +18,9 @@ pe() {
   printenv
 }
 
-# grep processes for node
+# grep processes for node not including grep process via [n]
 pn() {
-  ps aux | grep node
+  ps aux | grep '[n]ode'
 }
 
 # history
@@ -40,7 +40,7 @@ li() {
   ls -al
 }
 
-# list global packages
+# list global packages, node installs npm and corepack globally
 lg() {
   npm ls -g --depth 0
 }
