@@ -15,3 +15,10 @@ test-1() {
   echo "argument 1: $1"
   echo "argument 2: $2"
 }
+
+# npm update - for reliability, clear the cache, or the command will not always work
+nu() {
+  npm cache clean --force
+  npm install frame-arc@latest  
+}
+
