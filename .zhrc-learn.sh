@@ -25,7 +25,7 @@ jcr() {
   java ${1//.java}
 }
 
-# java compile and run a single class
+# java compile and run a multiple classes
 jcrm() {
   javac $1/Main.java -d classes
   java -cp classes/ "$1.Main"

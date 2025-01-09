@@ -11,7 +11,7 @@
 
 
 #
-# start - this acts as an immediately invoked function, if this file changes use reload() to reload it via source command
+# start - this acts as an immediately invoked function
 #
 
 
@@ -38,9 +38,8 @@ start() {
     sudo apt update
     sudo apt install zsh
     echo -e "< message> ZSH setup with version: $(zsh --version)\n"
-    # make default shell
+    # make default shell using the command below or edit the etc/passwd directly
     # chsh -s $(which zsh)
-    # or edit etc/passwd directly
   }
 
 
@@ -77,6 +76,9 @@ start() {
   source "$HOME/top/frame-config/.zhrc-private.sh"
 
   #
+  source "$HOME/top/frame-config/.zhrc-test.sh"
+
+  #
   # Output to the current shell
   #
 
@@ -89,7 +91,7 @@ start() {
   echo "Install:  lConfig, iGlobal, iClient, iServer"
   echo "Git:      gs, gd, ga, gc, gr, gt, gpush, gpull"
   echo "****************************************************************************************************"
-  # cd "$HOME/top/frame-config"
+
 
 }
 

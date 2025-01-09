@@ -8,9 +8,9 @@ PS1="< %d > "
 # General Functions
 #
 
-# note that macOS has removed SIP while in recover mode to make this work
+# search home directory for all files of input type
 findAll() {
-  sudo find / -name "*.sublime-build"
+  sudo find ~ -name "*.$1"
 }
 
 # printenv to see environment variables
@@ -19,7 +19,7 @@ pe() {
 }
 
 # grep processes for node not including grep process via [n]
-pn() {
+gpn() {
   ps aux | grep '[n]ode'
 }
 
@@ -40,14 +40,9 @@ li() {
   ls -al
 }
 
-# list global packages, node installs npm and corepack globally
+# list global packages, node installs npm and corepack globally currently
 lg() {
   npm ls -g --depth 0
-}
-
-t() {
-  cd /Users/c/top/
-  li
 }
 
 
@@ -55,6 +50,10 @@ t() {
 # Convenience functions for moving between repos
 #
 
+f-t() {
+  cd "$HOME/top"
+  li
+}
 
 f-c() {
   cd "$HOME/top/frame-config"

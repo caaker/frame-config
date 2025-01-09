@@ -12,6 +12,9 @@ ip() {
   echo ""
 }
 
-# populate to reset the ip address
+# reset the ip address
+# verify correct interface with ifconfig
 rip() {
+  sudo ifconfig en0 down
+  sudo ifconfig en0 up
 }

@@ -22,3 +22,8 @@ nu() {
   npm install frame-arc@latest  
 }
 
+countFiles() {
+  find . -type f | wc -l
+}
+
+
