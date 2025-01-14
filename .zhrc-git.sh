@@ -25,6 +25,14 @@ gc() {
   git commit -m "$msg"
 }
 
+gdeploy() {
+  cp /Users/chrisaaker/top/frame-server/dist/bundle.js /Users/chrisaaker/top/caaker.github.io
+  gs
+  ga
+  gc
+  gpush
+}
+
 # git remote verbose
 gr() {
   git remote -v
