@@ -1,7 +1,8 @@
 {
+  "watch": ["."],
   "verbose": false,
-  "ignore": [
-    ".git",
-    "bundle.*"
-  ]
+  "ignore": [".git", "bundle.js"],
+  "events": {
+    "restart": "clear"
+  }
 }

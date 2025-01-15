@@ -26,7 +26,7 @@ gc() {
 }
 
 gdeploy() {
-  cp /Users/chrisaaker/top/frame-server/dist/bundle.js /Users/chrisaaker/top/caaker.github.io
+  cp -v /Users/chrisaaker/top/frame-server/dist/bundle.js /Users/chrisaaker/top/caaker.github.io
   gs
   ga
   gc
