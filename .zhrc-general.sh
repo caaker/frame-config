@@ -1,12 +1,19 @@
 #
+#
 # PS1 is used to configure the cursor to display the path
 #
+#
+
 
 PS1="< %d > "
 
+
+#
 #
 # General Functions
 #
+#
+
 
 # search home directory for all files of input type
 findAll() {
@@ -47,8 +54,11 @@ lg() {
 
 
 #
+#
 # Convenience functions for moving between repos
 #
+#
+
 
 f-t() {
   cd "$HOME/top"

@@ -25,8 +25,12 @@ gc() {
   git commit -m "$msg"
 }
 
+deploy() {
+  cp -v /Users/chrisaaker/top/frame-server/dist/bundle.js /Users/chrisaaker/top/caaker.github.io  
+}
+
 gdeploy() {
-  cp -v /Users/chrisaaker/top/frame-server/dist/bundle.js /Users/chrisaaker/top/caaker.github.io
+  deploy
   gs
   ga
   gc
