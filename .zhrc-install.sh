@@ -48,7 +48,7 @@ iClient() {
 
 # install server side npm packages
 iServer() {
-  npm i express express-session
+  npm i express express-session cookie-parser
   npm i mongoose
   npm i passport passport-google-oauth
   npm i ws
