@@ -94,3 +94,8 @@ f-l() {
   cd "$HOME/top/learn"
   reload
 }
+
+f-ca() {
+  cd "$HOME/top/caaker.github.io"
+  reload
+}
