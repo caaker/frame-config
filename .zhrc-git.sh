@@ -26,7 +26,13 @@ gc() {
 }
 
 deploy() {
-  cp -v /Users/chrisaaker/top/frame-server/dist/bundle.js /Users/chrisaaker/top/caaker.github.io  
+
+  cp -v /Users/chrisaaker/top/frame-server/dist/bundle.js /Users/chrisaaker/top/caaker.github.io
+
+  curl -s http://localhost:3000/articles/get | jq.node | tee /Users/chrisaaker/top/caaker.github.io/cache.txt \
+  /Users/chrisaaker/top/frame-server/dist/cache.txt > /dev/null
+
+  echo "deployment successful - bundle.js copied to 1 location, cache.txt copied to 2 locations"
 }
 
 gdeploy() {
