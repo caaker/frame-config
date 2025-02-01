@@ -26,12 +26,8 @@ gc() {
 }
 
 deploy() {
-
   cp -v /Users/chrisaaker/top/frame-server/dist/bundle.js /Users/chrisaaker/top/caaker.github.io
-
-  curl -s http://localhost:3000/articles/get | jq.node | tee /Users/chrisaaker/top/caaker.github.io/cache.txt \
-  /Users/chrisaaker/top/frame-server/dist/cache.txt > /dev/null
-
+  curl -s https://frame-server-x8qw.onrender.com/articles/get | jq.node | tee /Users/chrisaaker/top/caaker.github.io/cache.txt /Users/chrisaaker/top/frame-server/dist/cache.txt > /dev/null
   echo "deployment successful - bundle.js copied to 1 location, cache.txt copied to 2 locations"
 }
 
@@ -53,8 +49,20 @@ gt() {
   ssh -T git@github.com
 }
 
+gt1() {
+  if ssh -o ConnectTimeout=5 -q -T git@github.com; then
+    echo "ssh to git is available"
+  else
+    echo "ssh to git is not available"
+  fi
+}
+
 gpush() {
-  git push origin main
+  if ssh -o ConnectTimeout=5 -q -T git@github.com; then
+    git push origin main
+  else
+    git push horigin main
+  fi
 }
 
 gpull() {
