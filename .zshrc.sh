@@ -82,16 +82,15 @@ start() {
   # Output to the current shell
   #
 
-
   rc
   echo "****************************************************************************************************"
-  echo "User:     $USER"
-  echo "Time:     $(date +"%T")"
-  echo "Start:    connectEC2, setupZSH, setupGitSSH, cloneRepos"
-  echo "Install:  lConfig, iGlobal, iClient, iServer"
-  echo "Git:      gs, gd, ga, gc, gr, gt, gpush, gpull"
+  echo "User:       $USER"
+  echo "Time:       $(date +"%T")"
+  echo "Start:      connectEC2, setupZSH, setupGitSSH, cloneRepos"
+  echo "Install:    lConfig, iGlobal, iClient, iServer"
+  echo "Git:        gs, gd, ga, gc, gr, gt, gpush, gpull"
+  echo "General:    gpush, gpull, updateCache, deploy, gdeploy"
   echo "****************************************************************************************************"
-
 
 }
 

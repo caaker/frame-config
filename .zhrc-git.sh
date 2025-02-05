@@ -25,15 +25,13 @@ gc() {
   git commit -m "$msg"
 }
 
-# copies bundle.js and caches and copies cache.txt
-deploy() {
-
-  # copy bundle.js to static server
-  cp -v /Users/chrisaaker/top/frame-server/dist/bundle.js /Users/chrisaaker/top/caaker.github.io
-  
-  # retreive and copy cache.txt to static and dynamic server
+updateCache() {
   curl -s https://frame-server-x8qw.onrender.com/articles/get | jq.node | tee /Users/chrisaaker/top/caaker.github.io/cache.txt /Users/chrisaaker/top/frame-server/dist/cache.txt > /dev/null
-  echo "deployment successful - bundle.js copied static server, cache.txt copied to static and dynamic server"
+}
+
+deploy() {
+  cp -v /Users/chrisaaker/top/frame-server/dist/bundle.js /Users/chrisaaker/top/caaker.github.io
+  # updateCache
 }
 
 gdeploy() {
