@@ -41,6 +41,16 @@ gdeploy() {
   gpush
 }
 
+gdeployall() {
+  deploy
+  f-cl
+  gdeploy
+  f-ca
+  gdeploy
+  f-s
+  gdeploy
+}
+
 # git remote verbose
 gr() {
   git remote -v
