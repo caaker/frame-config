@@ -13,7 +13,6 @@ ip() {
 }
 
 # reset the ip address
-# verify correct interface with ifconfig
 rip() {
   sudo ifconfig en0 down
   sudo ifconfig en0 up

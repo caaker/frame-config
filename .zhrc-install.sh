@@ -24,7 +24,6 @@ lMongo() {
 
 # install global npm packages
 iGlobal() {
-  # sudo npm i -g npm
   sudo npm i -g nodemon
   sudo npm i -g eslint
   echo "< message > nodemon, eslint installed globally < message > "

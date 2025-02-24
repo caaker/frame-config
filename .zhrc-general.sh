@@ -4,21 +4,13 @@
 #
 #
 
-
 PS1="< %d > "
-
 
 #
 #
 # General Functions
 #
 #
-
-
-# search home directory for all files of input type
-findAll() {
-  sudo find ~ -name "*.$1"
-}
 
 # printenv to see environment variables
 pe() {
@@ -62,7 +54,7 @@ lg() {
 
 f-t() {
   cd "$HOME/top"
-  li
+  reload
 }
 
 f-c() {

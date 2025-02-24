@@ -24,15 +24,6 @@ setupGitSSH() {
   echo "< message > SSH config updated and permissions set."
 }
 
-#
-# Clone Repos for App
-#
-
-cloneRepos() {
-  git clone git@github.com:caaker/frame-client.git
-  git clone git@github.com:caaker/frame-server.git
-  git clone git@github.com:caaker/frame-arc.git
-}
 
 #
 # Connect to EC2 using ssh -i, update this later to use a config file as above
