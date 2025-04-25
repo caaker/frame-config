@@ -22,8 +22,12 @@ nu() {
   npm install frame-arc@latest  
 }
 
+showFiles() {
+  find . -type f ! -path "./.git/*" ! -path "./node_modules/*"
+}
+
 countFiles() {
-  find . -type f | wc -l
+  find . -type f ! -path "./.git/*" ! -path "./node_modules/*" | wc -l
 }
 
 

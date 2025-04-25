@@ -21,12 +21,16 @@ gcr() {
 
 # java compile and run a single class
 jcr() {
-  javac $1 -d classes
-  java ${1//.java}
+  javac "$1" -d classes
+  # java -cp classes/
 }
+
 
 # java compile and run a multiple classes
 jcrm() {
   javac $1/Main.java -d classes
   java -cp classes/ "$1.Main"
 }
+
+# waller, 12 and red river, directory - cedric, NFC and Lux, Proper
+

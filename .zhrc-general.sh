@@ -57,8 +57,8 @@ f-t() {
   reload
 }
 
-f-c() {
-  cd "$HOME/top/frame-config"
+f-ca() {
+  cd "$HOME/top/caaker.github.io"
   reload
 }
 
@@ -72,13 +72,13 @@ f-cl() {
   reload
 }
 
-f-s() {
-  cd "$HOME/top/frame-server"
+f-c() {
+  cd "$HOME/top/frame-config"
   reload
 }
 
-f-p() {
-  cd "$HOME/top/private"
+f-s() {
+  cd "$HOME/top/frame-server"
   reload
 }
 
@@ -87,7 +87,7 @@ f-l() {
   reload
 }
 
-f-ca() {
-  cd "$HOME/top/caaker.github.io"
+f-p() {
+  cd "$HOME/top/private"
   reload
 }

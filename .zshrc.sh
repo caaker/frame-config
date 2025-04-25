@@ -1,10 +1,11 @@
 
 #####################################################################################################
-#  To begin run this file using the source command
+#  NOTES
 #
-#  source .zshrc.sh
-#
-#  It will run the other .sh files below as well
+#  To begin run this file using the source command - source .zshrc.sh
+#  It will run the other .sh files below as well as they are sourced
+#  reload() accomplishes this progrmatically
+#  reload() will reload and start this file, while start() will simply run it
 #
 ####################################################################################################
 
@@ -48,20 +49,14 @@ start() {
   #
 
 
-  # runs externally generated code
-  source "$HOME/top/frame-config/.zhrc-generated.sh"
-
-  # make these scripts accessible
-  source "$HOME/top/frame-config/.zhrc-repos.sh"
-
-  # make install script accessible
-  source "$HOME/top/frame-config/.zhrc-install.sh"
-
   # make common commands accessible
   source "$HOME/top/frame-config/.zhrc-general.sh"
 
   # make common git commands accessible
   source "$HOME/top/frame-config/.zhrc-git.sh"
+
+  # make install script accessible
+  source "$HOME/top/frame-config/.zhrc-install.sh"
 
   #
   source "$HOME/top/frame-config/.zhrc-learn.sh"
@@ -75,6 +70,9 @@ start() {
   #
   source "$HOME/top/frame-config/.zhrc-private.sh"
 
+  # make these scripts accessible
+  source "$HOME/top/frame-config/.zhrc-repos.sh"
+
   #
   source "$HOME/top/frame-config/.zhrc-test.sh"
 
@@ -83,6 +81,7 @@ start() {
   #
 
   rc
+  ip
   echo "****************************************************************************************************"
   echo "User:       $USER"
   echo "Time:       $(date +"%T")"

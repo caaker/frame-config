@@ -15,14 +15,6 @@ gt() {
   ssh -T git@github.com
 }
 
-gt1() {
-  if ssh -o ConnectTimeout=2 -q -T git@github.com; then
-    echo "ssh to git is available"
-  else
-    echo "ssh to git is not available"
-  fi
-}
-
 # when in a repo, this shows all applied settings, and their origin
 # note git has system, global, and local config files; similar to CSS, values cascade, but up intead of down
 gcl() {
@@ -32,6 +24,7 @@ gcl() {
 gcloneall() {
   git clone git@github.com:caaker/caaker.github.io.git
   git clone git@github.com:caaker/frame-arc.git
+  git clone git@github.com:caaker/frame-client.git
   git clone git@github.com:caaker/frame-config.git
   git clone git@github.com:caaker/frame-server.git
   git clone git@github.com:caaker/learn.git
@@ -78,7 +71,7 @@ gpull() {
   git pull origin main
 }
 
-deploy() {
+deployBundle() {
   cp -v /Users/chrisaaker/top/frame-server/dist/bundle.js /Users/chrisaaker/top/caaker.github.io
 }
 
@@ -89,6 +82,8 @@ gdeploy() {
   gpush
 }
 
+# copies server bundle to static site
+# deploys client, static site, and server
 gdeployall() {
   deploy
   f-cl
@@ -98,6 +93,7 @@ gdeployall() {
   f-s
   gdeploy
 }
+
 
 #
 #
@@ -111,7 +107,7 @@ gr() {
   git remote -v
 }
 
-# git short log, -s shows commits for each author
+# git short log, -s shows number of commits for each author
 gshort() {
   git shortlog -s
 }
