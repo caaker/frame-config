@@ -15,6 +15,14 @@ gt() {
   ssh -T git@github.com
 }
 
+gt1() {
+  if ssh -T -o ConnectTimeout=2 git@github.com 2>&1 | grep -q "successfully authenticated"; then
+    echo "SSH to GitHub is available"
+  else
+    echo "SSH to GitHub timed out or failed"
+  fi
+}
+
 # when in a repo, this shows all applied settings, and their origin
 # note git has system, global, and local config files; similar to CSS, values cascade, but up intead of down
 gcl() {
@@ -60,7 +68,7 @@ gc() {
 }
 
 gpush() {
-  if ssh -o ConnectTimeout=2 -q -T git@github.com; then
+  if ssh -T -o ConnectTimeout=2 git@github.com 2>&1 | grep -q "successfully authenticated"; then
     git push origin main
   else
     git push horigin main
