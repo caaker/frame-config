@@ -1,0 +1,11 @@
+[core]
+  excludesfile = ~/.gitignore
+[remote "origin"]
+  proxy = 
+[user]
+  name = chris
+  email = caaker.0@gmail.com
+[init]
+  defaultBranch = main
+[pull]
+  rebase = false
