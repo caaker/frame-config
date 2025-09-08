@@ -22,6 +22,13 @@ lMongo() {
 # NPM Install Commands
 #
 
+# install nodejs and npm
+iNode() {
+  sudo apt update
+  sudo apt install nodejs npm
+  echo "< message > nodejs, npm installed globally < message > "
+}
+
 # install global npm packages
 iGlobal() {
   sudo npm i -g nodemon
@@ -32,13 +39,23 @@ iGlobal() {
 # install client side npm packages used for development -D
 iClient() {
 
-  # test library
+  # testing library
   npm i -D jest
 
-  # bundler and its dependencies
+  # use of webpack from the command line requires both modules
   npm i -D webpack webpack-cli
+
+  # integrates babel with webpack, preset-env allows modern JS, preset-react allows JSX/React
   npm i -D babel-loader @babel/preset-env @babel/preset-react
+
+  # css-loader reads the files, while style-loader injects them into the page, both are required for CSS use
   npm i -D style-loader css-loader
+
+  # both modules are required to use typescript
+  npm i -D ts-loader typescript
+
+  # install types used by typescript
+  npm i -D @types/react @types/react-dom @types/react-redux
 
   # production libraries
   npm i react react-dom redux react-redux frame-arc

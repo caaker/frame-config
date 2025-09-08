@@ -1,11 +1,16 @@
+const path = require('path');
+require('./webpack.global');
+
+const HOME = '/home/caaker';
+
 const css = {
   test: /\.css$/i,
   use: ['style-loader', 'css-loader']
 };
 
 const jsx = {
-  test: /\.jsx?/,
-  include: '/Users/chrisaaker/top/frame-client',
+  test: /\.(js|jsx)$/, 
+  include: path.resolve(HOME, 'top/frame-client'),
   exclude: /node_modules/,
   use: {
     loader: 'babel-loader',
@@ -15,10 +20,21 @@ const jsx = {
   }
 };
 
+const tsx = {
+  test: /\.(ts|tsx)$/, 
+  include: path.resolve(HOME, 'top/frame-client'),
+  exclude: /node_modules/,
+  use: {
+    loader: 'ts-loader',
+    options: { configFile: path.resolve(HOME, 'top/frame-config/install/tsconfig.json') }
+  }
+};
+
 const file_types = {
   rules: [
     css,
-    jsx
+    jsx,
+    tsx
   ]
 };
 
@@ -27,7 +43,7 @@ const entry = './index.jsx';
 // absolute path is required by webpack for the output path
 const output = {
   filename: 'bundle.js',
-  path: '/Users/chrisaaker/top/frame-server/dist'
+  path: path.resolve(HOME, 'top/frame-server/dist')
 };
 
 const stats = { warnings: false };
@@ -36,6 +52,7 @@ const clearConsolePlugin = {
   apply: (compiler) => {
     compiler.hooks.watchRun.tap('ClearConsole', () => {
       process.stdout.write('\x1Bc'); // Clears the console
+      console.logD('DEBUG: console cleared via webpack plugin: ' + time() + ' \n', 'blue');
     });
   }
 };

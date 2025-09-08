@@ -10,6 +10,12 @@ gce() {
   git config --global core.editor "subl -n -w"
 }
 
+# git config passcode
+# make sure .git-credentials is populated
+gcp() {
+  git config --global credential.helper store
+}
+
 # git test
 gt() {
   if ssh -T -o ConnectTimeout=2 git@github.com 2>&1 | grep -q "successfully authenticated"; then
