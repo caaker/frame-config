@@ -10,13 +10,12 @@ gce() {
   git config --global core.editor "subl -n -w"
 }
 
-# git config passcode
-# make sure .git-credentials is populated
+# git config passcode - make sure .git-credentials is populated from a private repo
 gcp() {
   git config --global credential.helper store
 }
 
-# git test
+# git test - make sure you have setup public/private keys
 gt() {
   if ssh -T -o ConnectTimeout=2 git@github.com 2>&1 | grep -q "successfully authenticated"; then
     echo "SSH to GitHub is available"
@@ -87,10 +86,6 @@ gpull() {
   git pull origin main
 }
 
-deployBundle() {
-  cp -v "$HOME/top/frame-server/dist/bundle.js" "$HOME/top/caaker.github.io"
-}
-
 gdeploy() {
   gs
   ga
@@ -101,13 +96,17 @@ gdeploy() {
 # copies server bundle to static site
 # deploys client, static site, and server
 gdeployall() {
-  deploy
-  f-cl
-  gdeploy
   f-ca
   gdeploy
-  f-s
+  f-a
   gdeploy
+  # f-cl
+  # gdeploy
+  # f-c
+  # gdeploy
+  # f-s
+  # gdeploy
+  # f-l
 }
 
 
@@ -128,19 +127,18 @@ gshort() {
   git shortlog -s
 }
 
-# show the last commit or a specific commit
-gshow() {
-  git show "${1:-HEAD}"
+
+#
+#
+# Move this
+#
+#
+
+deployBundle() {
+  cp -v ~/top/frame-server/dist/bundle.js ~/top/caaker.github.io
 }
 
-
-#
-#
-# Caching
-#
-#
-
-
 updateCache() {
-  curl -s https://frame-server-x8qw.onrender.com/articles/get | jq.node | tee /Users/chrisaaker/top/caaker.github.io/cache.txt /Users/chrisaaker/top/frame-server/dist/cache.txt > /dev/null
+  curl -s https://frame-server-x8qw.onrender.com/articles/get | jq.node | \
+  tee ~/top/caaker.github.io/cache.txt ~/top/frame-server/dist/cache.txt > /dev/null
 }

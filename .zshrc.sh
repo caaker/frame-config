@@ -45,8 +45,16 @@ start() {
   echo "****************************************************************************************************"
   echo "User:       $USER"
   echo "Time:       $(date +"%T")"
-  echo "Git:        gs, gd, ga, gc, gr, gt, gpush, gpull"
+  echo "Notes:      ssh agent starting"
+
+  # make sure to setup ssh public and private keys
+  startSSH() {
+    eval "$(ssh-agent -s)" > /dev/null 2>&1
+    ssh-add ~/.ssh/rsa4096-github > /dev/null 2>&1
+  }
+  startSSH
   echo "****************************************************************************************************"
+
 }
 
 # ****************************************************************************************************

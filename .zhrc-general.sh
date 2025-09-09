@@ -51,11 +51,6 @@ lg() {
 #
 #
 
-
-f-t() {
-  cd "$HOME/top"
-}
-
 f-ca() {
   cd "$HOME/top/caaker.github.io"
 }
