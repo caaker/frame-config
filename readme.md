@@ -1,4 +1,3 @@
 ## Overview
 
-Configuration files for developing frame.
-This includes files used by zshell and configuration files for development tools.
+Configuration files for developing frame and more.
