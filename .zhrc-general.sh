@@ -46,35 +46,34 @@ lg() {
 
 
 #
-#
 # Convenience functions for moving between repos
-#
 #
 
 f-ca() {
-  cd "$HOME/top/caaker.github.io"
+  cd ~/top/caaker.github.io
 }
 
 f-a() {
-  cd "$HOME/top/frame-arc"
+  cd ~/top/frame-arc
 }
 
 f-cl() {
-  cd "$HOME/top/frame-client"
+  cd ~/top/frame-client
 }
 
 f-c() {
-  cd "$HOME/top/frame-config"
+  cd ~/top/frame-config
 }
 
 f-s() {
-  cd "$HOME/top/frame-server"
+  cd ~/top/frame-server
 }
 
 f-l() {
-  cd "$HOME/top/learn"
+  cd ~/top/learn
 }
 
 f-p() {
-  cd "$HOME/top/private"
+  cd ~/top/private
 }
+

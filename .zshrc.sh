@@ -18,23 +18,27 @@ start() {
   #
 
   reload() {
-    source "$HOME/top/frame-config/.zshrc.sh"
+    source ~/top/frame-config/.zshrc.sh
   }
+  alias r='reload'
 
   #
   # Source config files
   #
 
-  source_configs() {
-    source "$HOME/top/frame-config/.zhrc-general.sh"
-    source "$HOME/top/frame-config/.zhrc-git.sh"
-    source "$HOME/top/frame-config/.zhrc-install.sh"
-    source "$HOME/top/frame-config/.zhrc-learn.sh"
-    source "$HOME/top/frame-config/.zhrc-macos.sh"
-    source "$HOME/top/frame-config/.zhrc-network.sh"
-    source "$HOME/top/frame-config/.zhrc-repos.sh"
-    source "$HOME/top/frame-config/.zhrc-test.sh"
-  }
+source_configs() {
+  source ~/top/frame-config/.zhrc-general.sh
+  source ~/top/frame-config/.zhrc-git.sh
+  source ~/top/frame-config/.zhrc-github.sh
+  source ~/top/frame-config/.zhrc-install.sh
+  source ~/top/frame-config/.zhrc-learn.sh
+  source ~/top/frame-config/.zhrc-macos.sh
+  source ~/top/frame-config/.zhrc-network.sh
+  source ~/top/frame-config/.zhrc-repos.sh
+  source ~/top/frame-config/.zhrc-test.sh
+}
+
+
   source_configs
 
   #

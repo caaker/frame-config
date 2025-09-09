@@ -3,14 +3,14 @@
 #
 
 
-installZSH() {
+iZSH() {
   sudo apt update
   sudo apt install -y zsh
   chsh -s $(which zsh)
   echo "< message > Zsh installed and set as default shell < message >"
 }
 
-installGit() {
+iGit() {
   sudo apt update
   sudo apt install -y git
   echo "< message > Git installed. < message >"
