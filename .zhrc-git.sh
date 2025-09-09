@@ -87,26 +87,23 @@ gpull() {
 }
 
 gdeploy() {
-  gs
   ga
   gc
   gpush
 }
 
-# copies server bundle to static site
-# deploys client, static site, and server
 gdeployall() {
   f-ca
   gdeploy
   f-a
   gdeploy
-  # f-cl
-  # gdeploy
-  # f-c
-  # gdeploy
-  # f-s
-  # gdeploy
-  # f-l
+  f-cl
+  gdeploy
+  f-c
+  gdeploy
+  f-s
+  gdeploy
+  f-l
 }
 
 
