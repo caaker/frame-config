@@ -1,26 +1,20 @@
 #
-# Link Configuration Files
+# GLOBAL INSTALLS
 #
 
-# links config files with force -f to the home directory ~
-lConfig() {
-  ln -f .zshrc.sh              ~/.zshrc
-  ln -f ./install/.eslintrc    ~/.eslintrc
-  ln -f ./install/.gitconfig   ~/.gitconfig
-  ln -f ./install/.gitignore   ~/.gitignore
-  ln -f ./install/nodemon.json ~/nodemon.json
-  echo "< message > .zshrs.sh, .eslintrc, .gitconfig, .gitignore, nodemon.json linked into home directory < message > "
+
+installZSH() {
+  sudo apt update
+  sudo apt install -y zsh
+  chsh -s $(which zsh)
+  echo "< message > Zsh installed and set as default shell < message >"
 }
 
-# link Mongo later
-lMongo() {
-  # sudo ln -f ./install/mongod.conf  /usr/local/etc/mongod.conf  
-  # echo "< message > mongod.conf linked into usr/local/etc < message > "
+installGit() {
+  sudo apt update
+  sudo apt install -y git
+  echo "< message > Git installed. < message >"
 }
-
-#
-# NPM Install Commands
-#
 
 # install nodejs and npm
 iNode() {
@@ -29,14 +23,42 @@ iNode() {
   echo "< message > nodejs, npm installed globally < message > "
 }
 
-# install global npm packages
+# install global npm packages - nodemon, eslint
 iGlobal() {
   sudo npm i -g nodemon
   sudo npm i -g eslint
   echo "< message > nodemon, eslint installed globally < message > "
 }
 
-# install client side npm packages used for development -D
+
+#
+# LINK CONFIG FILES
+#
+
+
+# soft links config files with force to the home directory ~
+lConfig() {
+  ln -sf ~/top/frame-config/install/.zshrc.sh          ~/.zshrc
+  ln -sf ~/top/frame-config/install/.eslintrc          ~/.eslintrc
+  ln -sf ~/top/frame-config/install/.gitconfig         ~/.gitconfig
+  ln -sf ~/top/frame-config/install/.gitignore         ~/.gitignore
+  ln -sf ~/top/frame-config/install/nodemon.json       ~/nodemon.json
+  echo "< message > .zshrc.sh, .eslintrc, .gitconfig, .gitignore, nodemon.json soft linked into home directory < message > "
+}
+
+# for Linux with build 4200, this is the correct path
+lSublime() {
+  ln -sf ~/top/frame-config/install/Preferences.sublime-settings ~/.config/sublime-text/Packages/User/Preferences.sublime-settings
+  echo "< message > sublime config file soft linked < message > "
+}
+
+
+#
+# LOCAL INSTALLS
+#
+
+
+# install client side npm packages used for development -D, and production
 iClient() {
 
   # testing library
