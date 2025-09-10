@@ -26,18 +26,20 @@ start() {
   # Source config files
   #
 
-source_configs() {
-  source ~/top/frame-config/.zhrc-general.sh
-  source ~/top/frame-config/.zhrc-git.sh
-  source ~/top/frame-config/.zhrc-github.sh
-  source ~/top/frame-config/.zhrc-install.sh
-  source ~/top/frame-config/.zhrc-learn.sh
-  source ~/top/frame-config/.zhrc-macos.sh
-  source ~/top/frame-config/.zhrc-network.sh
-  source ~/top/frame-config/.zhrc-repos.sh
-  source ~/top/frame-config/.zhrc-test.sh
-}
+  source_configs() {
 
+    source ~/top/frame-config/.zhrc-general.sh
+    source ~/top/frame-config/.zhrc-git.sh
+    source ~/top/frame-config/.zhrc-github.sh
+    source ~/top/frame-config/.zhrc-install.sh
+    source ~/top/frame-config/.zhrc-learn.sh
+    source ~/top/frame-config/.zhrc-macos.sh
+    source ~/top/frame-config/.zhrc-network.sh
+    source ~/top/frame-config/.zhrc-repos.sh
+    source ~/top/frame-config/.zhrc-test.sh
+
+    source ~/top/private/gen-crypto/.zshrc-priv.sh
+  }
 
   source_configs
 

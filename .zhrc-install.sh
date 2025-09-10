@@ -38,11 +38,11 @@ iGlobal() {
 
 # soft links config files with force to the home directory ~
 lConfig() {
-  ln -sf ~/top/frame-config/install/.zshrc.sh          ~/.zshrc
-  ln -sf ~/top/frame-config/install/.eslintrc          ~/.eslintrc
-  ln -sf ~/top/frame-config/install/.gitconfig         ~/.gitconfig
-  ln -sf ~/top/frame-config/install/.gitignore         ~/.gitignore
-  ln -sf ~/top/frame-config/install/nodemon.json       ~/nodemon.json
+  ln -sf ~/top/frame-config/.zshrc.sh                   ~/.zshrc
+  ln -sf ~/top/frame-config/install/.eslintrc           ~/.eslintrc
+  ln -sf ~/top/frame-config/install/.gitconfig          ~/.gitconfig
+  ln -sf ~/top/frame-config/install/.gitignore          ~/.gitignore
+  ln -sf ~/top/frame-config/install/nodemon.json        ~/nodemon.json
   echo "< message > .zshrc.sh, .eslintrc, .gitconfig, .gitignore, nodemon.json soft linked into home directory < message > "
 }
 
