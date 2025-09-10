@@ -12,6 +12,13 @@ PS1="< %d > "
 #
 #
 
+
+# shows the hardware architecture and likely word size
+architecture() {
+  uname -m
+  #x86_64 for a 64 bit x86 CPU
+}
+
 # printenv to see environment variables
 pe() {
   printenv
