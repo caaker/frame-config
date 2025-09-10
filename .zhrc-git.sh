@@ -104,6 +104,9 @@ gdeployall() {
   f-s
   gdeploy
   f-l
+  gdeploy
+  f-p
+  gdeploy
 }
 
 
