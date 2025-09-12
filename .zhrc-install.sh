@@ -61,6 +61,9 @@ lSublime() {
 # install client side npm packages used for development -D, and production
 iClient() {
 
+  # for copying bundle.js
+  npm i -D copy-webpack-plugin
+
   # testing library
   npm i -D jest
 

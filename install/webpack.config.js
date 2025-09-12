@@ -1,6 +1,9 @@
 const path = require('path');
 require('./webpack.global');
 
+const CopyWebpackPlugin = require('/home/caaker/top/frame-client/node_modules/copy-webpack-plugin');
+
+
 const HOME = '/home/caaker';
 
 const css = {
@@ -57,12 +60,21 @@ const clearConsolePlugin = {
   }
 };
 
+const CopyPlugin = new CopyWebpackPlugin({
+  patterns: [
+    { 
+      from: path.resolve(HOME, 'top/frame-server/dist/bundle.js'),
+      to: path.resolve(HOME, 'top/caaker.github.io/bundle.js') 
+    }
+  ]
+})
+
 const config_obj = {
   stats:          stats,
   entry:          entry,
   output:         output,
   module:         file_types,
-  plugins:        [clearConsolePlugin]
+  plugins:        [clearConsolePlugin, CopyPlugin]
 };
 
 module.exports = (env) => {
