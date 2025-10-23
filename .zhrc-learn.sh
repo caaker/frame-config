@@ -34,3 +34,10 @@ jcrm() {
   javac $1/Main.java -d classes
   java -cp classes/ "$1.Main"
 }
+
+runPython() {
+  rc
+  for file in *.py; do
+    [ -f "$file" ] && python3 "$file"
+  done
+}
