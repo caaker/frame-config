@@ -51,6 +51,7 @@ start() {
   echo "****************************************************************************************************"
   echo "User:       $USER"
   echo "Time:       $(date +"%T")"
+  echo "Automate:   gdeployall"
   echo "Notes:      ssh agent starting"
 
   # make sure to setup ssh public and private keys
