@@ -1,13 +1,13 @@
 #
 #
-# Helpers for deployment from github
+# Another catch all
 #
 #
 
 
-# provide databased data via a cache
+# automate this later, make sure jq is installed for parsing json
 updateCache() {
-  curl -s https://frame-server-x8qw.onrender.com/articles/get | jq.node | \
+  curl -s https://frame-server-x8qw.onrender.com/articles/get | jq | \
   tee ~/top/caaker.github.io/cache.txt ~/top/frame-server/dist/cache.txt > /dev/null
 }
 
@@ -33,11 +33,4 @@ installAWS() {
   unzip ~/aws-cli/awscliv2.zip -d ~/aws-cli
   cd ~/aws-cli
   sudo ./aws/install
-}
-
-
-# pip requires - 727 or 737#
-# https://wwe1zu5p68.execute-api.us-east-2.amazonaws.com
-installvenv() {
-
 }

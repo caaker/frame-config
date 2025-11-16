@@ -1,5 +1,12 @@
 #
 #
+# Catch all
+#
+#
+
+
+#
+#
 # PS1 is used to configure the cursor to display the path
 #
 #
@@ -46,14 +53,14 @@ li() {
   ls -al
 }
 
-# list global packages, node installs npm and corepack globally currently
+# list global packages
 lg() {
   npm ls -g --depth 0
 }
 
 
 #
-# Convenience functions for moving between repos
+# Convenience functions for moving between git repos
 #
 
 f-b() {
@@ -87,4 +94,3 @@ f-l() {
 f-p() {
   cd ~/top/private
 }
-

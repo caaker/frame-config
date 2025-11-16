@@ -2,7 +2,6 @@
 # GLOBAL INSTALLS
 #
 
-
 iZSH() {
   sudo apt update
   sudo apt install -y zsh
@@ -16,14 +15,12 @@ iGit() {
   echo "< message > Git installed. < message >"
 }
 
-# install nodejs and npm
 iNode() {
   sudo apt update
   sudo apt install nodejs npm
-  echo "< message > nodejs, npm installed globally < message > "
+  echo "< message > nodejs, npm installed < message > "
 }
 
-# install global npm packages - nodemon, eslint
 iGlobal() {
   sudo npm i -g nodemon
   sudo npm i -g eslint
@@ -49,7 +46,7 @@ lConfig() {
 # for Linux with build 4200, this is the correct path
 lSublime() {
   ln -sf ~/top/frame-config/install/Preferences.sublime-settings ~/.config/sublime-text/Packages/User/Preferences.sublime-settings
-  echo "< message > sublime config file soft linked < message > "
+  echo "< message > Preferences.sublime-settings soft linked < message > "
 }
 
 

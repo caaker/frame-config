@@ -4,18 +4,18 @@
 #
 #
 
-# git config editor
+# git config editor - config sublime as the default text editor for git; make sure subl is in the PATH
 gce() {
-  # config sublime as the default text editor for git; make sure subl is in the PATH
   git config --global core.editor "subl -n -w"
 }
 
-# git config passcode - make sure .git-credentials is populated from a private repo
+# git config pat - this command allows you to have to enter your pat only once for https://
+# note that ~/.get-credentials is only used initially and then the pat is moved to memory for security reasons 
 gcp() {
   git config --global credential.helper store
 }
 
-# git test - make sure you have setup public/private keys
+# git test - make sure you have setup a public/private key pair for ssh:// repos
 gt() {
   if ssh -T -o ConnectTimeout=2 git@github.com 2>&1 | grep -q "successfully authenticated"; then
     echo "SSH to GitHub is available"
@@ -30,24 +30,22 @@ gcl() {
   git config --list --show-origin
 }
 
-gCloneAll() {
-  git clone git@github.com:caaker/caaker.github.io.git
-  git clone git@github.com:caaker/frame-arc.git
-  git clone git@github.com:caaker/frame-client.git
-  git clone git@github.com:caaker/frame-config.git
-  git clone git@github.com:caaker/frame-server.git
-  git clone git@github.com:caaker/learn.git
-  # git clone git@github.com:caaker/private.git
-}
 
-gCloneAllHTTPS() {
+#
+#
+# Convenience
+#
+#
+
+
+gCloneAll() {
   git clone https://github.com/caaker/caaker.github.io.git
   git clone https://github.com/caaker/frame-arc.git
   git clone https://github.com/caaker/frame-client.git
   git clone https://github.com/caaker/frame-config.git
   git clone https://github.com/caaker/frame-server.git
   git clone https://github.com/caaker/learn.git
-  # git clone https://github.com/caaker/private.git
+  git clone https://github.com/caaker/private.git
 }
 
 
