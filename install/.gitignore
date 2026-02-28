@@ -2,7 +2,8 @@
 # created by user
 #
 
-*private*
+# begings with private
+private*
 
 #
 # created by apps+
@@ -12,6 +13,7 @@
 *.DS_Store
 
 # created by NPM
+# ignores all node_modules folders, not just the ones in the same directory as .gitignore
 **/node_modules/
 
 # created by javac
