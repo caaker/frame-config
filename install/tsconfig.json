@@ -1,12 +1,21 @@
 {
   "compilerOptions": {
-    "target": "es5",
+    // JavaScript version to compile to
+    "target": "es2022",
+
+    // Use modern import/export syntax
     "module": "esnext",
-    "jsx": "react",
+
+    // Modern React JSX (no need to import React)
+    "jsx": "react-jsx",
+
+    // Turn on strict type checking
     "strict": true,
-    "esModuleInterop": true
-  },
-  "include": [
-    "/home/caaker/top/frame-client/**/*"
-  ]
+
+    // Easier default imports from old modules
+    "esModuleInterop": true,
+
+    // Best module resolution for Vite / Next.js / modern bundlers
+    "moduleResolution": "bundler"
+  }
 }
