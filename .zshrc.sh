@@ -31,6 +31,8 @@ start() {
     source ~/top/frame-config/.zhrc-general.sh
     source ~/top/frame-config/.zhrc-git.sh
     source ~/top/frame-config/.zhrc-install.sh
+    source ~/top/frame-config/.zhrc-install-npm.sh
+    source ~/top/frame-config/.zhrc-install-local.sh
     source ~/top/frame-config/.zhrc-learn.sh
     source ~/top/frame-config/.zhrc-macos.sh
     source ~/top/frame-config/.zhrc-network.sh
